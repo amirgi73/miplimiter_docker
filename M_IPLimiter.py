@@ -103,6 +103,7 @@ class XrayLogs:
                     logs = await ws.recv()
                 except Exception as e:
                      logger.error(f"Cannot get Logs from server")
+                     self.get_token()
                 else:
                     for l in logs.split('\n'):
                         self.parse_logs(l)
